@@ -4,18 +4,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TrainTimes</title>
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
     <!-- Javascript -->
     <script src="assets/js/main.js"></script>
+    <!--Firebase link-->
+    <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
+    <!-- Moment.js -->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Train Scheduler</title>
 </head>
 
 <body>
+    <div class="row">
+        <div class="container">
+            <div class="jumbotron bg-dark text-light">
+                <div class="text-center">
+                    <h1 class="header font-weight-bold">TrainTimes</h1>
+                    <p id="main-p">Don't Be Late!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="container">
+            <div class="card bg-dark text-light" id="form">
+                <div class="card-body">
+                    <h2 class="text-center">Add Train</h2><hr>
+                    <form>
+                        <div class="form-group">
+                            <label for="trainName">Train Name</label>
+                            <input type="text" class="form-control" id="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="destination">Destination</label>
+                            <input type="text" class="form-control" id="dest">
+                        </div>
+                        <div class="form-group">
+                            <label for="trainTime">First Train Time (HH:mm - Military Time)</label>
+                            <input type="text" class="form-control" id="fTrain">
+                        </div>
+                        <div class="form-group">
+                            <label for="frequency">Frequency (mins)</label>
+                            <input type="number" class="form-control" id="freq">
+                        </div>
+                        <button type="submit" class="btn btn-primary fSubmit" id="formSubmit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="container">
+            <div class="card" id="table">
+                <table class="table table-hover table-dark" id="table">
+                    <thead id="form2Head">
+                        <tr class="text-center">
+                            <th scope="col">Train Name</th>
+                            <th scope="col">Destination</th>
+                            <th scope="col">Frequency (min)</th>
+                            <th scope="col">Next Arrival</th>
+                            <th scope="col">Minutes Away</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-center" id="tbody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <footer class="footer text-center bg-dark text-light">
+            <span>TrainTimes &copy; 2018</span>
+        </footer>
+    </div>
 
 </body>
 

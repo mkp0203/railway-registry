@@ -1,54 +1,55 @@
 $(document).ready(function () {
-    var config = {
-        apiKey: "AIzaSyA2R2jqcLElYFgqccWMZZb4j0mFTvdq6uQ",
-        authDomain: "first-firebase-4e328.firebaseapp.com",
-        databaseURL: "https://first-firebase-4e328.firebaseio.com",
-        projectId: "first-firebase-4e328",
-        storageBucket: "first-firebase-4e328.appspot.com",
-        messagingSenderId: "649555136497"
-    };
 
+    var config = {
+        apiKey: "AIzaSyAnD0N6TNqVE4NSHUTnwn1WocrrIdDwJTY",
+        authDomain: "first-firebase-1f69b.firebaseapp.com",
+        databaseURL: "https://first-firebase-1f69b.firebaseio.com",
+        projectId: "first-firebase-1f69b",
+        storageBucket: "first-firebase-1f69b.appspot.com",
+        messagingSenderId: "1062879549421"
+    };
     firebase.initializeApp(config);
     var database = firebase.database();
-    var theArray = [];
 
-    $("#foSubmit").on("click", function (event) {
+    $("#formSubmit").on("click", function (event) {
+        
         event.preventDefault();
-        var name = $("#name").val();
-        var role = $("#role").val();
-        var mRate = $("#monthly-rate").val();
-        var sDate = $("#start-date").val();
 
-        var varPush = {
+        var name = $("#name").val().trim();
+        var dest = $("#dest").val().trim();
+        var fTrain = $("#fTrain").val().trim();
+        var freq = $("#freq").val().trim();
+
+        var newTrain = {
             name: name,
-            role: role,
-            mRate: mRate,
-            sDate: sDate
+            dest: dest,
+            fTrain: fTrain,
+            freq: freq
         };
 
-        database.ref().push(
-            varPush
-        );
-        var tbod = $("#tbody");
-        var tRow = $("<tr>");
+        database.ref().push(newTrain);
 
-        database.ref().on("child_added", function (childSnapshot, key) {
-            var nam = childSnapshot.val().name;
-            var rol = childSnapshot.val().role;
-            var mrat = childSnapshot.val().mRate;
-            var sdat = childSnapshot.val().sDate;
-            console.log(name);
-            var tnam = $("<td>").text(nam);
-            var trol = $("<td>").text(rol);
-            var tmrat = $("<td>").text(mrat);
-            var tsdat = $("<td>").text(sdat);
-            tRow.append(tnam);
-            tRow.append(trol);
-            tRow.append(tmrat);
-            tRow.append(tsdat);
-            tbod.append(tRow);
+        $("#name").val("");
+        $("#dest").val("");
+        $("#fTrain").val("");
+        $("#freq").val("");
 
-        });
+    });
+
+    database.ref().on("child_added", function (childSnapshot) {
+
+        var name = childSnapshot.val().name;
+        var dest = childSnapshot.val().dest;
+        var fTrain = childSnapshot.val().fTrain;
+        var freq = childSnapshot.val().freq;
+
+        var convert = moment(fTrain, "HH:mm").subtract(1, "years");
+        var diffTime = moment().diff(moment(convert), "minutes");
+        var remainder = diffTime % freq;
+        var minsToTrain = freq - remainder;
+        var nextTrain = (moment().add(minsToTrain, "minutes")).format("hh:mm");
+
+        $("#table > tbody").prepend("<tr><td>" + name + "</td><td>" + dest + "</td><td>" + freq + "</td><td>" + nextTrain + "</td><td>" + minsToTrain + "</td></tr>");
 
     });
 });
