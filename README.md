@@ -1,2 +1,7 @@
-# train_scheduler
-Website for scheduling train times
+# Railway Registry (c) 2018
+
+# How it Works
+- Enter your trains information in the "Add Train" form
+- Press the "Submit" button to add your train to the Railway Registry table below
+- Your train information is saved on the server for others to see as well
+- Thanks for using the Railway Registry!
