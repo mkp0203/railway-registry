@@ -52,4 +52,5 @@ $(document).ready(function () {
         $("#table > tbody").prepend("<tr><td>" + name + "</td><td>" + dest + "</td><td>" + freq + "</td><td>" + nextTrain + "</td><td>" + minsToTrain + "</td></tr>");
 
     });
+    
 });
