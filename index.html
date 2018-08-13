@@ -22,48 +22,49 @@
 </head>
 
 <body>
-    <div class="wrapper">
-        <div class="row">
-            <div class="jumbotron bg-dark text-light text-center">
-                <h1 class="header font-weight-bold">TrainTimes</h1>
-                <p id="motto">Don't Be Late!</p>
-            </div>
-        </div>
 
-        <div class="row text-center">
-            <div class="container">
-                <div class="card bg-info text-light mx-2" id="form">
-                    <div class="card-body">
-                        <form>
-                            <h2 class="text-center" id="addTrain">Add Train</h2>
-                            <hr>
-                            <div class="form-group">
-                                <label for="trainName">Train Name</label>
-                                <input type="text" class="form-control" id="name">
-                            </div>
-                            <div class="form-group">
-                                <label for="destination">Destination</label>
-                                <input type="text" class="form-control" id="dest">
-                            </div>
-                            <div class="form-group">
-                                <label for="trainTime">First Train Time (HH:mm - Military)</label>
-                                <input type="text" class="form-control" id="fTrain">
-                            </div>
-                            <div class="form-group">
-                                <label for="frequency">Frequency (mins)</label>
-                                <input type="number" class="form-control" id="freq">
-                            </div>
-                            <button type="submit" class="btn btn-primary bg-warning text-dark font-weight-bold" id="formSubmit">Submit</button>
-                        </form>
-                    </div>
+    <div class="row">
+        <div class="jumbotron bg-dark text-light text-center">
+            <h1 class="header font-weight-bold">TrainTimes</h1>
+            <p id="motto">Don't Be Late!</p>
+        </div>
+    </div>
+
+    <div class="row text-center">
+        <div class="container">
+            <div class="card bg-info text-light mx-2" id="form">
+                <div class="card-body">
+                    <form>
+                        <h2 class="text-center" id="addTrain">Add Train</h2>
+                        <hr>
+                        <div class="form-group">
+                            <label for="trainName">Train Name</label>
+                            <input type="text" class="form-control" id="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="destination">Destination</label>
+                            <input type="text" class="form-control" id="dest">
+                        </div>
+                        <div class="form-group">
+                            <label for="trainTime">First Train Time (HH:mm - Military)</label>
+                            <input type="text" class="form-control" id="fTrain">
+                        </div>
+                        <div class="form-group">
+                            <label for="frequency">Frequency (mins)</label>
+                            <input type="number" class="form-control" id="freq">
+                        </div>
+                        <button type="submit" class="btn btn-lg bg-warning text-dark font-weight-bold" id="formSubmit">Submit</button>
+                    </form>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="row">
-            <div class="container">
-                <div class="card mx-2" id="tableCard">
-                    <table class="table table-hover table-dark table-responsive" id="table">
+    <div class="row">
+        <div class="container">
+            <div class="card mx-2" id="tableCard">
+                <div class="table-responsive">
+                    <table class="table table-hover table-dark" id="table">
                         <thead id="form2Head">
                             <tr class="text-center">
                                 <th scope="col">Train Name</th>
@@ -78,11 +79,12 @@
                 </div>
             </div>
         </div>
-
-        <footer class="footer text-center bg-dark text-light">
-            <span>TrainTimes &copy; 2018</span>
-        </footer>
     </div>
+
+    <footer class="footer text-center bg-dark text-light">
+        <span>TrainTimes &copy; 2018</span>
+    </footer>
+
 </body>
 
 </html>
