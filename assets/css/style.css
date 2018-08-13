@@ -3,6 +3,7 @@
 body {
     background: url("../img/funky-lines.png");
     font-family: 'Raleway', sans-serif;
+    max-width: 100%;
 }
 
 .jumbotron {
