@@ -24,7 +24,7 @@
 <body>
     <div class="row">
         <div class="container">
-            <div class="jumbotron bg-dark text-light">
+            <div class="jumbotron bg-primary text-light">
                 <div class="text-center">
                     <h1 class="header font-weight-bold">TrainTimes</h1>
                     <p id="main-p">Don't Be Late!</p>
@@ -36,9 +36,10 @@
     <div class="row">
         <div class="container">
             <div class="card bg-info text-light" id="form">
-                <div class="card-body">
+                <div class="card-header bg-warning text-dark">
                     <h2 class="text-center" id="addTrain">Add Train</h2>
-                    <hr>
+                </div>
+                <div class="card-body">
                     <form>
                         <div class="form-group">
                             <label for="trainName">Train Name</label>
@@ -56,7 +57,7 @@
                             <label for="frequency">Frequency (mins)</label>
                             <input type="number" class="form-control" id="freq">
                         </div>
-                        <button type="submit" class="btn btn-primary fSubmit" id="formSubmit">Submit</button>
+                        <button type="submit" class="btn btn-primary bg-warning text-dark font-weight-bold" id="formSubmit">Submit</button>
                     </form>
                 </div>
             </div>
@@ -65,8 +66,8 @@
     <br>
     <div class="row">
         <div class="container">
-            <div class="card" id="table">
-                <table class="table table-hover table-dark" id="table">
+            <div class="card table-responsive" id="table">
+                <table class="table table-hover table-light" id="table">
                     <thead id="form2Head">
                         <tr class="text-center">
                             <th scope="col">Train Name</th>

@@ -24,6 +24,10 @@ body {
     border: none;
 }
 
+#formSubmit {
+    border: none;
+}
+
 #addTrain {
     font-weight: bold;
 }
